@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable name="anasayfaToolbarTitle" type="String" />
+        <variable name="anasayfaFragment" type="com.example.todoapp.ui.fragment.AnasayfaFragment" />
+        <variable name="noteeAdapter" type="com.example.todoapp.ui.adapter.NoteAdapter" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.AnasayfaFragment">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarAnasayfa"
+            app:title="@{anasayfaToolbarTitle}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabNotEkle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->anasayfaFragment.fabNotEkle(fabNotEkle)}"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="32dp"
+            android:clickable="true"
+            android:src="@drawable/_add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:adapter="@{noteeAdapter}"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarAnasayfa"
+            app:layout_constraintVertical_bias="0.0"
+            app:spanCount="2" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

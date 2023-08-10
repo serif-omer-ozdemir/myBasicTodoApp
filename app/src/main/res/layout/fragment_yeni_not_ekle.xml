@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable name="noteKayitToolbarBaslik" type="String" />
+
+        <variable name="tarih" type="String" />
+
+        <variable name="noteKayitFragment" type="com.example.todoapp.ui.fragment.NotKayitFragment" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.NotKayitFragment">
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabNotKayit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="32dp"
+            android:onClick="@{()->noteKayitFragment.fabKayit(editTextNotKayitBaslik.getText().toString(),editTextNotKayitIcerik.getText().toString(),tarih,fabNotKayit)}"
+            android:clickable="true"
+            android:src="@drawable/_check"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarNotKayit"
+            app:title="@{noteKayitToolbarBaslik}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editTextNotKayitBaslik"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_marginTop="32dp"
+            android:drawableStart="@drawable/_title"
+            android:drawablePadding="5dp"
+            android:ems="10"
+            android:hint="title.."
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarNotKayit" />
+
+        <EditText
+            android:id="@+id/editTextNotKayitIcerik"
+            android:layout_width="370dp"
+            android:layout_height="379dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="26dp"
+            android:ems="10"
+            android:gravity="top"
+            android:hint="content.."
+            android:inputType="text|textMultiLine"
+            app:layout_constraintBottom_toTopOf="@+id/fabNotKayit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNotKayitBaslik" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable name="notGuncelleToolbarTitle" type="String" />
+        <variable name="notNesnesi" type="com.example.todoapp.data.entity.Note" />
+        <variable name="notGuncelleFragment" type="com.example.todoapp.ui.fragment.NotGuncelleFragment" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.NotGuncelleFragment">
+
+        <EditText
+            android:id="@+id/editTextNotGuncelleBaslik"
+            android:layout_width="0dp"
+            android:text="@{notNesnesi.note_title}"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_marginTop="20dp"
+            android:drawableStart="@drawable/_title"
+            android:drawablePadding="5dp"
+            android:ems="10"
+            android:hint="title.."
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.525"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarNotGuncelle" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabGuncelle"
+            android:layout_width="wrap_content"
+            android:onClick="@{()->notGuncelleFragment.fabGuncelle(editTextNotGuncelleBaslik.getText().toString(),editTextNotGuncelleIcerik.getText().toString(),fabGuncelle)}"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="32dp"
+            android:clickable="true"
+            android:src="@drawable/_check"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarNotGuncelle"
+            android:layout_width="0dp"
+            app:title="@{notGuncelleToolbarTitle}"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editTextNotGuncelleIcerik"
+            android:text="@{notNesnesi.note_content}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:ems="10"
+            android:gravity="top"
+            android:hint="content.."
+            android:inputType="text|textMultiLine"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNotGuncelleBaslik" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

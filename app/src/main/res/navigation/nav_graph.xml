@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashScreenFragment">
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.example.todoapp.login.SplashScreenFragment"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreenFragment_to_logInLogOutFragment"
+            app:destination="@id/logInLogOutFragment"
+            app:popUpTo="@id/splashScreenFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/logInLogOutFragment"
+        android:name="com.example.todoapp.login.LogInLogOutFragment"
+        android:label="LogInLogOutFragment" >
+        <action
+            android:id="@+id/action_logInLogOutFragment_to_anasayfaFragment"
+            app:destination="@id/anasayfaFragment"
+            app:popUpTo="@id/logInLogOutFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/anasayfaFragment"
+        android:name="com.example.todoapp.ui.fragment.AnasayfaFragment"
+        android:label="AnasayfaFragment" >
+        <action
+            android:id="@+id/action_anasayfaFragment_to_notKayitFragment"
+            app:destination="@id/notKayitFragment" />
+        <action
+            android:id="@+id/action_anasayfaFragment_to_notGuncelleFragment"
+            app:destination="@id/notGuncelleFragment" />
+        <action
+            android:id="@+id/action_anasayfaFragment_to_logInLogOutFragment"
+            app:destination="@id/logInLogOutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notGuncelleFragment"
+        android:name="com.example.todoapp.ui.fragment.NotGuncelleFragment"
+        android:label="NotGuncelleFragment" >
+        <action
+            android:id="@+id/action_notGuncelleFragment_to_anasayfaFragment"
+            app:destination="@id/anasayfaFragment" />
+        <argument
+            android:name="notee"
+            app:argType="com.example.todoapp.data.entity.Note" />
+    </fragment>
+    <fragment
+        android:id="@+id/notKayitFragment"
+        android:name="com.example.todoapp.ui.fragment.NotKayitFragment"
+        android:label="NotKayitFragment" >
+        <action
+            android:id="@+id/action_notKayitFragment_to_anasayfaFragment"
+            app:destination="@id/anasayfaFragment" />
+    </fragment>
+</navigation>
