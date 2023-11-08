@@ -9,7 +9,9 @@
 *Dagger Hilt* <br>
 *FireBase and Room together* <br>
 *Coroutines* <br>
-** 
+*Splash Screen*<br>
+*Broadcast Receiver* <br>
+*Google Login/Logout* <br>
 
 
 
