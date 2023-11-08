@@ -4,12 +4,12 @@
 ## basic todo App 
 *MVVM* <br>
 *ViewBinding* <br>
-*DataBindind* <br>
+*DataBinding* <br>
 *Navigation* <br>
-*Dagger* <br>
+*Dagger Hilt* <br>
 *FireBase and Room together* <br>
-*Courotine* <br>
-*Hilt* 
+*Coroutines* <br>
+** 
 
 
 
